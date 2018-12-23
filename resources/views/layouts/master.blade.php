@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <router-link to="/dashboard" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-tachometer-alt text-blue"></i>
               <p>
                 Dashboard
               </p>
@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
+              <i class="nav-icon fa fa-cog text-green"></i>
               <p>
                 Management
                 <i class="right fa fa-angle-left"></i>
@@ -88,23 +88,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
+                <router-link to="/users" class="nav-link">
+                  <i class="fa fa-users nav-icon text-teal"></i>
+                  <p>Users</p>
+                </router-link>
               </li>
             </ul>
           </li>
 
           <li class="nav-item">
             <router-link to="/profile" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+              <i class="nav-icon fas fa-user text-purple"></i>
               <p>
                 Profile
               </p>
@@ -113,10 +107,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <a href="" class="nav-link">
-              <i class="nav-icon fa fa-power-off"></i>
-              <p>
-                Logout
+              <i class="nav-icon fa fa-power-off text-red"></i>
+
+              <p onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Logout
               </p>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
             </a>
           </li>
           
@@ -146,10 +145,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      Credits to: <a class="credit-link" href="https://www.youtube.com/channel/UCnj1BK9TU32-bOlZ9415fuw">Code Inspire</a>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2018-2019 <a href="https://deniealljoe.ga">Denieall J</a>. </strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
